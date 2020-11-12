@@ -1,6 +1,7 @@
 #container {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     font-family: 'Source Code Pro', monospace;
     color: #25283D;
@@ -41,7 +42,7 @@
     #container {
         flex-direction: row;
         justify-content: space-around;
-        flex-wrap: wrap;
+        
         margin: 0em 4em 4em;
     }
 
