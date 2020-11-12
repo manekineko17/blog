@@ -1,0 +1,57 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Source Code Pro', monospace;
+    color: #25283D;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #A100F2;
+    padding: 1em;
+    width: 18em;
+    margin-top: 2em;
+}
+
+#nom_theme {
+    font-family: 'Roboto';
+    background-color: rgb(255, 255, 255, 50%);
+    padding: 5px;
+    font-size: 80%;
+}
+
+.img_article {
+    margin-top: 0.5em;
+    width: 50%;
+}
+
+
+/*tablet :on screens that are min 376px, set the followings*/
+@media screen and (max-width: 1094px) and (min-width: 834px) {
+
+}
+
+
+/*desktop: on screens that are 1094px or more, set the followings */
+@media screen and (min-width: 1094px) {
+
+    #container {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 0em 4em 4em;
+    }
+
+    .article{
+        margin-top: 3em;
+        width: 22em;
+     }
+
+    .img_article {
+        width: 60%;
+    }
+
+}
