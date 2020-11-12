@@ -1,14 +1,21 @@
-/* #container{
-    box-sizing: border-box;
-    margin : 1;
-    padding: 1;
-} */
+#container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-content: center;
+}
+
+h2{
+    text-align: center;
+}
 
 #formulaire{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-content: center;
     align-content: center;
     background-color: #EB8258;
@@ -17,22 +24,49 @@
     font-family: 'Source Code Pro', monospace;
     width: 80%;
     height: 80%;
+    padding: 1em;
 }
 
-#theme_et_image{
+/* #imageArticle{
+    cursor: pointer;
+} */
+
+#inputImage{
+    cursor: pointer;
+}
+
+.titreArticle, .nomAuteur, .contenuArticle {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.contenuArticle{
+    max-width: 90%;
+    height: 6em;
+
+}
+
+#themeEtImage{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
-    align-content: center;
-    align-content: center;
+    justify-content: space-between;
     
 }
 
-#themeArticle{
+.themeArticle{
+    display: flex;
+    flex-direction: column;
     font-family: 'Source Code Pro', monospace;
     font-size: 1em;
 }
+
+#boutonPubliez{
+    width: min-content;
+}
+
+
 
 /*titre de votre article*/
 input[placeholder] {
@@ -41,8 +75,9 @@ input[placeholder] {
     font-size: 0.8em;
 }
 
+
 /*publiez*/
-input[value] {
+input[value],[type] {
     font-family: 'Source Code Pro', monospace;
     font-size: 1em;
 }

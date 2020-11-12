@@ -25,32 +25,34 @@
     <div id="container">
         <form id="formulaire">
             <h2>Créez votre article</h2>
-            <fieldset>
-                <label for="titre_Article">Titre de l'article</label>
-                <input type="text" placeholder="Titre de votre article" id="titreArticle">
+
+                <label class="titreArticle" for="titreArticle">Titre de l'article</label>
+                <input type="text" placeholder="Titre de votre article" class="titreArticle">
             
-                <div id="theme_et_image">
-                    <label for="themeArticle">Thème</label>
-                    <select id="themeArticle">
+                <div id="themeEtImage">
+
+                    <label class="themeArticle" for="themeArticle">Thème</label>
+                    <select class="themeArticle">
                         <option value="Amour">Amour</option>
                         <option value="Travail">Travail</option>
                         <option value="Loisirs">Loisirs</option>
                         <option value="Divers">Divers</option>
                     </select>
                     
-                    <label for="image_Article">Image</label>
-                    <input type="image" placeholder="Cliquez pour insérer une image" id="image_Article">
+                    <label id="imageArticle" for="imageArticle">Image</label>
+                    <input type="file" id="inputImage">
+
                 </div>
+               
 
-                <label for="nomAuteur">Nom de l'auteur</label>
-                <input type="text" placeholder="Titre de l'auteur" id="nomAuteur">               
+                <label class="nomAuteur" for="nomAuteur">Nom de l'auteur</label>
+                <input type="text" placeholder="Titre de l'auteur" class="nomAuteur">               
 
-                <label for="contenuArticle">Contenu de l'article</label>
-                <textarea placeholder="Rédigez votre article ici …" id="contenuArticle"></textarea>
+                <label class="contenuArticle" for="contenuArticle">Contenu de l'article</label>
+                <textarea placeholder="Rédigez votre article ici …" class="contenuArticle"></textarea>
 
-                <input class="boutonPubliez" type="submit" value="Publiez">
+                <input id="boutonPubliez" type="submit" value="Publiez">
 
-            </fieldset>
           </form>
 
 
