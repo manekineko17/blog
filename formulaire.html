@@ -23,6 +23,37 @@
     </header>
 
     <div id="container">
+        <form id="formulaire">
+            <h2>Créez votre article</h2>
+
+                <label class="titreArticle" for="titreArticle">Titre de l'article</label>
+                <input type="text" placeholder="Titre de votre article" class="titreArticle">
+            
+                <div id="themeEtImage">
+
+                    <label class="themeArticle" for="themeArticle">Thème</label>
+                    <select class="themeArticle">
+                        <option value="Amour">Amour</option>
+                        <option value="Travail">Travail</option>
+                        <option value="Loisirs">Loisirs</option>
+                        <option value="Divers">Divers</option>
+                    </select>
+                    
+                    <label id="imageArticle" for="imageArticle">Image</label>
+                    <input type="file" id="inputImage">
+
+                </div>
+               
+
+                <label class="nomAuteur" for="nomAuteur">Nom de l'auteur</label>
+                <input type="text" placeholder="Titre de l'auteur" class="nomAuteur">               
+
+                <label class="contenuArticle" for="contenuArticle">Contenu de l'article</label>
+                <textarea placeholder="Rédigez votre article ici …" class="contenuArticle"></textarea>
+
+                <input id="boutonPubliez" type="submit" value="Publiez">
+
+          </form>
 
 
     </div>
