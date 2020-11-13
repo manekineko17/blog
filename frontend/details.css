@@ -12,6 +12,7 @@ body{
     /* margin: 2.5em; */
     color: #25283D;
     font-family: 'Source Sans Pro', monospace;
+    /* height: 100%; */
 }
 #container > h2 {
     color: #25283D;
@@ -30,16 +31,19 @@ body{
 
 #theme, #author, #date {
     width: 100%;
+    margin: 1em 0 0 0;
 }
 
 .res{
     background-color: rgba(255,255,255,0.5);
+    line-height: 2em;
 }
 
 #bloc_image{
 display: flex;
 justify-content: center;
 align-items: center;
+margin: 1em 0 1em 0;
 
 }
 
@@ -51,6 +55,7 @@ height: auto;
 #texte_area{
     background-color: rgba(255,255,255,0.5);
     width: 90%;
+    margin: 0 0 1em 0;
     /* height: 10px; */
 }
 
