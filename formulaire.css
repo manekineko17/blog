@@ -1,0 +1,97 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-content: center;
+}
+
+h2{
+    text-align: center;
+}
+
+#formulaire{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: center;
+    align-content: center;
+    background-color: #EB8258;
+    color: #25283d;
+    font-size: 0.8em;
+    font-family: 'Source Code Pro', monospace;
+    width: 80%;
+    height: 80%;
+    padding: 1em;
+}
+
+/* #imageArticle{
+    cursor: pointer;
+} */
+
+#inputImage{
+    cursor: pointer;
+}
+
+.titreArticle, .nomAuteur, .contenuArticle {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.contenuArticle{
+    max-width: 90%;
+    height: 6em;
+
+}
+
+#themeEtImage{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    
+}
+
+.themeArticle{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1em;
+}
+
+#boutonPubliez{
+    width: min-content;
+}
+
+
+
+/*titre de votre article*/
+input[placeholder] {
+    font-family: 'Source Code Pro', monospace;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+
+/*publiez*/
+input[value],[type] {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1em;
+}
+
+/*champs du menu déroulant*/
+option[value] {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1em;
+}
+
+/*contenu article*/
+textarea[placeholder] {
+    font-family: 'Source Code Pro', monospace;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
