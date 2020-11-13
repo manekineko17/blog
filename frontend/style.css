@@ -98,6 +98,11 @@ footer {
     width: 3em;
 }
 
+/* On ne veut pas que les noms apparaissent sur la version mobile */
+.name {
+display: none;
+}
+
 /* ///////////////////////// RESPONSIVE  /////////////////////////  */
 
 /*tablet :on screens that are min 376px, set the followings*/
@@ -118,9 +123,24 @@ footer {
             font-size: 1em;
             margin : 0.5em 0em 0 0.5em;
         }
-
-
     #part2_header{
         padding: 2em 0;
     }
+
+    footer{
+        background-color: #25283D ;
+    }
+
+/* On veut que les noms apparraissent sur la version Desktop  */
+    .name {
+        display: flex;
+        flex-direction: row;
+        font-family: 'Source Code Pro', monospace;
+        letter-spacing: 0.3em;
+        margin-right: 1em;
+        }
+        #mereani {color: #A100F2;}
+        #aurelie {color: #EB8258;}
+        #marine {color: #4FB0C6;}
+        #adele{color: #F6F740;}
 }
