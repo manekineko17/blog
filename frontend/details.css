@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,700;1,600&display=swap');
+
+.articleDetails{
+    background-color: #4FB0C6;
+    margin: 2.5em;
+    color: #25283D;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-bottom: 1em;
+}
+h2{
+    text-align: center;
+}
+
+span{
+    font-weight: bold;
+    margin: 2em;
+}
+
+p{
+    margin: 1em;
+}
+.res{
+    background: rgba(255,255,255,0.5);
+    line-height:30px;
+}
+.img_articleDetails{
+    display: block;
+    width: 500px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.res_contenu{
+    background: rgba(255,255,255,0.5);
+    margin-top: 1em;
+}
+
+/*Version Desktop*/
+
+@media only screen and (min-width : 1224px)
+{
+    h2{
+        text-align: left;
+        margin-left: 2em;
+        font-weight: bold; 
+    }
+    .text{
+    
+        margin-right: 7em;
+    }
+    span{
+        font-weight: bold;
+        margin: 2em;
+    }
+    
+    p{
+        margin: 2em;
+    }
+    .res{
+        width: 120%;
+    }
+    .img_articleDetails{
+        display: inline-block;
+    }
+    .res_contenu{
+     width: 50%;
+    }
+}
