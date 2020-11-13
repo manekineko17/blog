@@ -25,9 +25,7 @@ header{
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    background-image: url("https://images.unsplash.com/photo-1580566176138-daa588058b59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
-    height: 15em;
-}
+    background-image: url("https://images.unsplash.com/photo-1580566176138-daa588058b59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");}
 
 header > nav{
     background-color: rgba(37, 40, 61, 1);
@@ -53,8 +51,9 @@ header > nav > ul{
         }
 
 #cadre_titre {
-    background-color: rgba(37, 40, 61, 0.4);
+    background-color: rgba(20, 24, 59, 0.4);
     padding: 0 2em 0 2em;
+    margin: 1em 0;
 }
 
 h1 {
@@ -74,7 +73,8 @@ header > #part2_header{
     align-content: center;
     align-items: center;
     width: 100%;
-    flex-grow: 3; /* flew grow dit quelle quantité de place dispo dans le container cette div doit prendre. Ici elle prend 3fois plus de places que les autres */ 
+    padding: 1em 0;
+    flex-grow: 3; flew grow dit quelle quantité de place dispo dans le container cette div doit prendre. Ici elle prend 3fois plus de places que les autres 
 }
 
 /* ///////////////////////// CORPS ///////////////////////// */
@@ -120,4 +120,7 @@ footer {
         }
 
 
+    #part2_header{
+        padding: 2em 0;
+    }
 }
