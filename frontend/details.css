@@ -1,92 +1,35 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,700;1,600&display=swap'); */
-
-
-body{
-    background-color: #4FB0C6;
-}
-
-#container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* margin: 2.5em; */
-    color: #25283D;
-    font-family: 'Source Sans Pro', monospace;
-    /* height: 100%; */
-}
-#container > h2 {
-    color: #25283D;
-    font-size: 1.5em;
-}
-
-#info_articles {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-left: 5%;
-    height: 50%;
-    width: 90%;
-}
-
-#theme, #author, #date {
+#container1{
+    display: flex;justify-content: center; align-items: center; 
     width: 100%;
-    margin: 1em 0 0 0;
-}
+    background-color: #25283D;}
 
-.res{
-    background-color: rgba(255,255,255,0.5);
-    line-height: 2em;
-}
+#container2{
+    display: flex;flex-direction: column;align-items: center;
+    width: 90%;height: 90%;
+    background-color: #4FB0C6;color: #25283D;font-family: 'Source Sans Pro', monospace;}
 
-#bloc_image{
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 1em 0 1em 0;
+#container2 > h2 {color: #25283D;font-size: 1.5em;}
 
-}
+#info_articles {display: flex;flex-direction: column;justify-content: center;width: 90%;height: 30%;}
 
-#image{
-width: 70%;
-height: auto;
-}
+#theme, #author, #date {width: 100%;margin: 1em 0 0 0;}
 
-#texte_area{
+.res{background-color: rgba(255,255,255,0.5);line-height: 2em;}
+
+#container2 > #bloc_image{
+display: flex;justify-content: center;align-items: center;
+height:20%;
+margin: 1em 0 1em 0;}
+
+#bloc_image > #image{width: auto;height: 100%;}
+
+#container2 > #texte_area{
     background-color: rgba(255,255,255,0.5);
     width: 90%;
-    margin: 0 0 1em 0;
-    /* height: 10px; */
-}
+    margin: 0 0 1em 0;}
 
+#texte_area > .res_contenu {font-size: 1em;}
 /*Version Desktop*/
 
-@media only screen and (min-width : 1224px)
-{
-    h2{
-        text-align: left;
-        margin-left: 2em;
-        font-weight: bold; 
-    }
-    .text{
-    
-        margin-right: 7em;
-    }
-    span{
-        font-weight: bold;
-        margin: 2em;
-    }
-    
-    p{
-        margin: 2em;
-    }
-    .res{
-        width: 120%;
-    }
-    .img_articleDetails{
-        display: inline-block;
-    }
-    .res_contenu{
-     width: 50%;
-    }
-}
+/* COMMENTAIRE ADELE = PAS DE MEDIAQUERIES PUISQUE LE RESPONSIVE MOBILE FIRST EST OK DE BASE ET PAS LE TEMPS - 
+REFAIRE PLUS TARD, QUAND LE PROJET SERA BIEN AVANCÉ */
