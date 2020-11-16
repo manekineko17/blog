@@ -3,6 +3,7 @@
 const bodyParser = require('body-parser'); //import de body parser
 const mongoose = require('mongoose'); //import de mongoose
 
+<<<<<<< HEAD
 // je fais en sorte qu'express utilise sa méthode de router et je vais en sorte que app l'utilise !
 
 /*Une application Express est une série de fonctions appelées middleware. Chaque élément de middleware
@@ -11,6 +12,8 @@ const mongoose = require('mongoose'); //import de mongoose
 
 const express = require('express'); //import d'express + commande require
 
+=======
+>>>>>>> 04133d115bd77c7ae47457621048622ad7d78f3d
 // Je créé une variable qui va permettre d'executer express
 
 const app = express(); //appel de la méthode express pour créer une appli express
