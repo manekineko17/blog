@@ -1,7 +1,6 @@
 // j'appelle express et mongoose et body parser ! 
 const bodyParser = require('body-parser'); //import de body parser
 const mongoose = require('mongoose'); //import de mongoose
-const postRoutes = require('./routes/post');    //importation du router
 
 // je fais en sorte qu'express utilise sa méthode de router et je vais en sorte que app l'utilise !
 const express = require('express'); //import d'express + commande require
@@ -31,13 +30,63 @@ app.use(bodyParser.json()); //middleware global. à partir de ce middleware, on 
 // je créé mon modèle d'articles 
 const router = express.Router();
 
+const articleSchema = mongoose.Schema({
+  title: { type: String, required: true },
+  topic: {type: String, required: true}, /* faire recherche pour modifier le type */
+  // imageUrl: { type: String, required: true },
+  author: { type: String, required: true },
+  date: { type: Date, default : Date.now},
+  content: {type: String, required: true},
+});
+
+module.exports = mongoose.model('Article', articleSchema);
+
 /* je créé mes routes en fonction de trois chemins différents : 
 - un chemin pour accueil 
 - un chemin pour le formulaire
 - un chemin pour le détail en fonction de l'article demandé */ 
 
+router.route('/')
+    .all(function(req,res){
+        res.json({message : "Bienvenue sur notre API de piscine", methode : req.method});
+    });
+
+// router.post('/articles', (req, res) => { //pour poster un article
+//   const article = new Article({
+//   ...req.body
+//   });
+//   article.save()
+//   .then(() => res.status(201).json({ message: 'Objet enregistré!'}))
+//   .catch(error => res.status(400).json({ error }));
+// });
+
+// router.put('/:id', (req, res, next) => {
+//     Article.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
+//     .then(() => res.status(200).json({ message: 'Objet modifié !'}))
+//     .catch(error => res.status(400).json({ error }));
+// });
+
+// router.delete('/:id', (req, res, next) => {
+//     Article.deleteOne({ _id: req.params.id })
+//     .then(() => res.status(200).json({ message: 'Objet supprimé !'}))
+//     .catch(error => res.status(400).json({ error }));
+// });
+
+// router.get('/articles/:article_id', (req, res, next) => {
+//   Article.findOne({ _id: req.params.id })
+//   .then(article => res.status(200).json(article))
+//   .catch(error => res.status(404).json({ error }));
+// });
+
+// router.get('/articles', (req, res, next) => {
+//    Article.find()
+// .then(Articles => res.status(200).json(Articles))
+// .catch(error => res.status(400).json({ error }))
+// });
+
 // Je fais en sorte que mon fichier soit écouté sur le port 3000 
-app.use('/post', postRoutes); // middleware  localhost:3000/post
+
+
 //si on met app.use('/api/post', postRoutes); localhost:3000/api/post
 
 
