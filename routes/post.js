@@ -6,8 +6,7 @@ router.get('/', (req, res) => { // pour rapporter des données
     res.send("Hello, je viens du fichier post.js");
 })
 
-router.post('/', (req, res, next) => { //pour poster un article
-    delete req.body._id;
+router.post('/articles', (req, res) => { //pour poster un article
     const article = new Article({
     ...req.body
     });
@@ -28,16 +27,16 @@ router.post('/', (req, res, next) => { //pour poster un article
 //     .catch(error => res.status(400).json({ error }));
 // });
 
-// router.get('/:id', (req, res, next) => {
-//     Article.findOne({ _id: req.params.id })
-//     .then(article => res.status(200).json(article))
-//     .catch(error => res.status(404).json({ error }));
-// });
+router.get('/articles/:article_id', (req, res, next) => {
+    Article.findOne({ _id: req.params.id })
+    .then(article => res.status(200).json(article))
+    .catch(error => res.status(404).json({ error }));
+});
 
-// router.get('/', (req, res, next) => {
-//     Article.find()
-// .then(Articles => res.status(200).json(Articles))
-// .catch(error => res.status(400).json({ error }))
-// });
+ router.get('/articles', (req, res, next) => {
+     Article.find()
+ .then(Articles => res.status(200).json(Articles))
+.catch(error => res.status(400).json({ error }))
+});
 
 module.exports = router;

@@ -10,7 +10,7 @@ const express = require('express'); //import d'express + commande require
 const app = express(); //appel de la méthode express pour créer une appli express
 
 // je connecte ma database
-mongoose.connect('lien_data', /*modifier le lien*/
+mongoose.connect("mongodb+srv://adelevrc:OrBOQavXpEwtl2c5@cluster0.fz1lu.mongodb.net/opendata?retryWrites=true&w=majority", /*modifier le lien*/
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
@@ -40,10 +40,16 @@ const router = express.Router();
 app.use('/post', postRoutes); // middleware  localhost:3000/post
 //si on met app.use('/api/post', postRoutes); localhost:3000/api/post
 
+
+
 // je fais en sorte que mes données soit exportées sur mongoose 
 module.exports = app;
 
 
+
+app.listen(3000, function(){
+  console.log('Connexion au serveur réussie'); 
+  });
 
 /*Une application Express est une série de fonctions appelées middleware. Chaque élément de middleware
 *reçoit les objets request et response, peut les lire, les analyser et les manipuler. Le middleware Express
