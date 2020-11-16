@@ -8,88 +8,140 @@
 
 h2{
     text-align: center;
+    padding-bottom: 1em;
 }
 
+/**************CADRE ORANGE FORMULAIRE*************/
 #formulaire{
     display: flex;
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-content: center;
+    /* align-items: center; */
     background-color: #EB8258;
     color: #25283d;
     font-size: 0.8em;
     font-family: 'Source Code Pro', monospace;
-    padding: 1em;
+    padding: 2em;
 }
 
-/* #imageArticle{
-    cursor: pointer;
-} */
-
-#inputImage{
-    cursor: pointer;
-}
-
+/*********************CHAMPS DE SAISIE***************/
 .titreArticle, .nomAuteur, .contenuArticle {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width:100%;
 }
 
-.contenuArticle{
-    max-width: 90%;
-    height: 6em;
-
+/***************************DIV TITRE DE L'ARTICLE***************/
+#divTitre{
+    padding-bottom: 1em;
 }
-
-#themeEtImage{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    
-}
-
-.themeArticle{
-    display: flex;
-    flex-direction: column;
-    font-family: 'Source Code Pro', monospace;
-    font-size: 1em;
-}
-
-#boutonPubliez{
-    width: min-content;
-}
-
-
-
-/*titre de l'article*/
 input[placeholder] {
     font-family: 'Source Code Pro', monospace;
     font-style: italic;
     font-size: 0.8em;
 }
-
-
-/*publiez*/
-input[value],[type] {
-    font-family: 'Source Code Pro', monospace;
-    font-size: 1em;
+.titreArticle{
+    padding-bottom: 0.5em;
 }
 
-/*champs du menu déroulant*/
+/*************************DIV THEME ET IMAGE************************/
+#divThemeEtImage{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-bottom: 1em;
+}
+
+.themeArticle{
+    padding-bottom: 0.5em;
+}
+#imageArticle{
+    padding-bottom: 0.5em;
+}
+.divThemeArticle{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.divImageArticle{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+/******************MENU DEROULANT THEME****************/
+.themeArticle{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1em;
+    padding-right: 0.5em;
+}
+
+#menuDeroulant{
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+}
 option[value] {
     font-family: 'Source Code Pro', monospace;
     font-size: 1em;
 }
 
-/*contenu article*/
+
+/************DIV NOM DE L'AUTEUR*************/
+#divAuteur{
+    padding-bottom: 1em;
+}
+.nomAuteur{
+    padding-bottom: 0.5em;
+}
+
+
+
+/*****************DIV CONTENU DE L'ARTICLE**************/
+.contenuArticle{
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 90%;   
+    padding-bottom: 0.5em; 
+}
 textarea[placeholder] {
     font-family: 'Source Code Pro', monospace;
     font-style: italic;
     font-size: 0.8em;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+}
+#divArticle{
+    padding-bottom: 1em;
 }
 
+
+/*****************DIV PUBLIEZ*****************************/
+#divPubliez{
+    display: flex;
+    justify-content: flex-end;
+}
+#boutonPubliez{
+    width: min-content;
+    background-color: rgb(255, 255, 255);
+    border: none;
+}
+input[value],[type] {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1em;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 0.5em;
+}
+p{
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.8em;
+    font-style: italic;
+    width: 90%;
+}

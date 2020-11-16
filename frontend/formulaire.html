@@ -27,32 +27,41 @@
         <form id="formulaire">
             <h2>Créez votre article</h2>
 
+            <div id="divTitre">
                 <label class="titreArticle" for="titreArticle">Titre de l'article</label>
                 <input type="text" placeholder="Titre de votre article" class="titreArticle">
-            
-                <div id="themeEtImage">
+            </div>
 
+            <div id="divThemeEtImage">
+                <div id="divThemeArticle">
                     <label class="themeArticle" for="themeArticle">Thème</label>
-                    <select class="themeArticle">
-                        <option value="Amour">Amour</option>
-                        <option value="Travail">Travail</option>
-                        <option value="Loisirs">Loisirs</option>
-                        <option value="Divers">Divers</option>
+                    <select class="themeArticle" id="menuDeroulant">
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="Front JS">Front JS</option>
+                        <option value="Back JS">Back JS</option>
                     </select>
-                    
-                    <label id="imageArticle" for="imageArticle">Image</label>
-                    <input type="file" id="inputImage">
-
                 </div>
+                <div id="divImageArticle">
+                    <label id="imageArticle" for="imageArticle">Image</label>
+                    <input type="url" placeholder="Votre url"/> <!--id="inputImage"-->
+                </div>
+            </div>
                
-
+            <div id="divAuteur">
                 <label class="nomAuteur" for="nomAuteur">Nom de l'auteur</label>
-                <input type="text" placeholder="Titre de l'auteur" class="nomAuteur">               
-
+                <input type="text" placeholder="Titre de l'auteur" class="nomAuteur"/>               
+            </div>
+            
+            <div id="divArticle">
                 <label class="contenuArticle" for="contenuArticle">Contenu de l'article</label>
                 <textarea placeholder="Rédigez votre article ici …" class="contenuArticle"></textarea>
+            </div>
 
-                <input id="boutonPubliez" type="submit" value="Publiez">
+            <div id="divPubliez">
+                <p>Tous les champs sont obligatoires</p>
+                <input id="boutonPubliez" type="submit" value="Publiez"/>
+            </div>
 
           </form>
 
