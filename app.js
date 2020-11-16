@@ -36,12 +36,11 @@ const router = express.Router();
 - un chemin pour le formulaire
 - un chemin pour le détail en fonction de l'article demandé */ 
 
-app.use('/post', postRoutes); // middleware
-//si erreur, essayer avec app.use('/api/post', postRoutes); 
-
 // Je fais en sorte que mon fichier soit écouté sur le port 3000 
-// je fais en sorte que mes données soit exportées sur mongoose 
+app.use('/post', postRoutes); // middleware  localhost:3000/post
+//si on met app.use('/api/post', postRoutes); localhost:3000/api/post
 
+// je fais en sorte que mes données soit exportées sur mongoose 
 module.exports = app;
 
 
