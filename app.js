@@ -51,14 +51,26 @@ router.route('/')
         res.json({message : "Bienvenue sur notre API d'articles", methode : req.method});
     });
 
-// router.post('/articles', (req, res) => { //pour poster un article
-//   const article = new Article({
-//   ...req.body
-//   });
-//   article.save()
-//   .then(() => res.status(201).json({ message: 'Objet enregistré!'}))
-//   .catch(error => res.status(400).json({ error }));
-// });
+router.post('/articles', (req, res) => { //pour poster un article
+  const article = new Article({
+  ...req.body
+  });
+  article.save()
+  .then(() => res.status(201).json({ message: 'Article enregistré!'}))
+  .catch(error => res.status(400).json({ error }));
+});
+
+router.get('/articles/:article_id', (req, res) => {   // ":" correspond à une url dynamique
+  Article.findById(req.params.article_id)
+  .then(article => res.status(200).json(article))
+  .catch(error => res.status(404).json({ error }));
+});
+
+router.get('/', (req, res) => {
+  Article.find()
+  .then(articles => res.status(200).json(articles))
+  .catch(error => res.status(400).json({ error }));
+});
 
 // router.put('/:id', (req, res, next) => {
 //     Article.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
@@ -72,33 +84,19 @@ router.route('/')
 //     .catch(error => res.status(400).json({ error }));
 // });
 
-// router.get('/articles/:article_id', (req, res, next) => {
-//   Article.findOne({ _id: req.params.id })
-//   .then(article => res.status(200).json(article))
-//   .catch(error => res.status(404).json({ error }));
-// });
-
-// router.get('/articles', (req, res, next) => {
-//    Article.find()
-// .then(Articles => res.status(200).json(Articles))
-// .catch(error => res.status(400).json({ error }))
-// });
-
 // Je fais en sorte que mon fichier soit écouté sur le port 3000 
 
-
 //si on met app.use('/api/post', postRoutes); localhost:3000/api/post
-
-
 
 // je fais en sorte que mes données soit exportées sur mongoose 
 module.exports = app;
 
-
+app.use(router);
 
 app.listen(3000, function(){
   console.log('Connexion au serveur réussie'); 
   });
+
 
 /*Une application Express est une série de fonctions appelées middleware. Chaque élément de middleware
 *reçoit les objets request et response, peut les lire, les analyser et les manipuler. Le middleware Express
