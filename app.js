@@ -48,7 +48,7 @@ module.exports = mongoose.model('Article', articleSchema);
 
 router.route('/')
     .all(function(req,res){
-        res.json({message : "Bienvenue sur notre API de piscine", methode : req.method});
+        res.json({message : "Bienvenue sur notre API d'articles", methode : req.method});
     });
 
 // router.post('/articles', (req, res) => { //pour poster un article
