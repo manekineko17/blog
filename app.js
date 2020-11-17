@@ -9,7 +9,7 @@ const express = require('express'); //import d'express + commande require
 const app = express(); //appel de la méthode express pour créer une appli express
 
 // je connecte ma database
-mongoose.connect("mongodb+srv://adelevrc:OrBOQavXpEwtl2c5@cluster0.fz1lu.mongodb.net/opendata?retryWrites=true&w=majority", /*modifier le lien*/
+mongoose.connect("mongodb+srv://adelevrc:OrBOQavXpEwtl2c5@cluster0.fz1lu.mongodb.net/piscinedb?retryWrites=true&w=majority", /*modifier le lien*/
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
