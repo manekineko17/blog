@@ -78,7 +78,7 @@ header > #part2_header{
     align-items: center;
     width: 100%;
     padding: 1em 0;
-    flex-grow: 3; flew grow dit quelle quantité de place dispo dans le container cette div doit prendre. Ici elle prend 3fois plus de places que les autres 
+    flex-grow: 3; /* flew grow dit quelle quantité de place dispo dans le container cette div doit prendre. Ici elle prend 3fois plus de places que les autres  */
 }
 
 /* ///////////////////////// CORPS ///////////////////////// */
