@@ -24,18 +24,19 @@
     </header>
 
     <div id="container">
-        <form id="formulaire">
+        <form method="post" action="mongodb+srv://adelevrc:OrBOQavXpEwtl2c5@cluster0.fz1lu.mongodb.net/articlesdb?retryWrites=true&w=majority"
+        enctype="multipart/form-data" id="formulaire">  <!--enctype permet d'avoir une partie des données pour le corps du formulaire et une autre pour le fichier téléchargé-->
             <h2>Créez votre article</h2>
 
             <div id="divTitre">
                 <label class="titreArticle" for="titreArticle">Titre de l'article</label>
-                <input type="text" placeholder="Titre de votre article" class="titreArticle">
+                <input type="text" placeholder="Titre de votre article" class="titreArticle" required>
             </div>
 
             <div id="divThemeEtImage">
                 <div id="divThemeArticle">
                     <label class="themeArticle" for="themeArticle">Thème</label>
-                    <select class="themeArticle" id="menuDeroulant">
+                    <select class="themeArticle" id="menuDeroulant" required>
                         <option value="HTML">HTML</option>
                         <option value="CSS">CSS</option>
                         <option value="Front JS">Front JS</option>
@@ -50,12 +51,12 @@
                
             <div id="divAuteur">
                 <label class="nomAuteur" for="nomAuteur">Nom de l'auteur</label>
-                <input type="text" placeholder="Titre de l'auteur" class="nomAuteur"/>               
+                <input type="text" placeholder="Titre de l'auteur" class="nomAuteur" required/>               
             </div>
             
             <div id="divArticle">
                 <label class="contenuArticle" for="contenuArticle">Contenu de l'article</label>
-                <textarea placeholder="Rédigez votre article ici …" class="contenuArticle"></textarea>
+                <textarea placeholder="Rédigez votre article ici …" class="contenuArticle" required></textarea>
             </div>
 
             <div id="divPubliez">
@@ -70,21 +71,19 @@
 
     <footer>
 
-        <div id="bloc_logo">
-            <a href="https://github.com/manekineko17" target="_blank">
-            <img class = "img_logo_github" src="./media/GitHub-bleu.png" alt="logo Github Marine Grouiller"/>
-            </a>
-            <a href="https://github.com/adelevrc" target="_blank">
-            <img class = "img_logo_github" src="./media/GitHub-jaune.png" alt="logo Github Adèle Vercaygne"/>
-            </a>
-            <a href="https://github.com/aureliem07" target="_blank">
-            <img class = "img_logo_github" src="./media/GitHub-orange.png" alt="logo Github Aurélie Maiilot"/>
-            </a>
-            <a href="https://github.com/Mereani" target="_blank">
-            <img class = "img_logo_github" src="./media/GitHub-violet.png" alt="logo Github Mereani Baratte"/>
-            </a>
-        </div>
-        
+        <a href="https://github.com/manekineko17" target="_blank">
+        <img class = "img_logo_github" src="./media/GitHub-bleu.png" alt="logo Github Marine Grouiller"/>
+        </a>
+        <a href="https://github.com/adelevrc" target="_blank">
+        <img class = "img_logo_github" src="./media/GitHub-jaune.png" alt="logo Github Adèle Vercaygne"/>
+        </a>
+        <a href="https://github.com/aureliem07" target="_blank">
+        <img class = "img_logo_github" src="./media/GitHub-orange.png" alt="logo Github Aurélie Maiilot"/>
+        </a>
+        <a href="https://github.com/Mereani" target="_blank">
+        <img class = "img_logo_github" src="./media/GitHub-violet.png" alt="logo Github Mereani Baratte"/>
+        </a>
+
     </footer>
 
 </body>
