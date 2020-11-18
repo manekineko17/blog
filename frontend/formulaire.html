@@ -24,17 +24,18 @@
     </header>
 
     <div id="container">
-        <form id="formulaire">
+        <form id="formulaire" method="POST" action="______________">
             <h2>Créez votre article</h2>
 
             <div id="divTitre">
                 <label class="titreArticle" for="titreArticle">Titre de l'article</label>
-                <input type="text" placeholder="Titre de votre article" class="titreArticle">
+                <input type="text" placeholder="Titre de votre article" class="titreArticle" name="________">
             </div>
 
             <div id="divThemeEtImage">
                 <div id="divThemeArticle">
-                    <label class="themeArticle" for="themeArticle">Thème</label>
+                    <label class="themeArticle" for="themeArticle" name ="____________">Thème</label>
+                    <!-- Peut être laisser tomber le menu déroulant ?  -->
                     <select class="themeArticle" id="menuDeroulant">
                         <option value="HTML">HTML</option>
                         <option value="CSS">CSS</option>
@@ -44,18 +45,18 @@
                 </div>
                 <div id="divImageArticle">
                     <label id="imageArticle" for="imageArticle">Image</label>
-                    <input type="url" placeholder="Votre url"/> <!--id="inputImage"-->
+                    <input type="url" placeholder="Votre url"/ name="________"> <!--id="inputImage"-->
                 </div>
             </div>
                
             <div id="divAuteur">
                 <label class="nomAuteur" for="nomAuteur">Nom de l'auteur</label>
-                <input type="text" placeholder="Titre de l'auteur" class="nomAuteur"/>               
+                <input type="text" placeholder="Titre de l'auteur" class="nomAuteur" name="___________"/>               
             </div>
             
             <div id="divArticle">
                 <label class="contenuArticle" for="contenuArticle">Contenu de l'article</label>
-                <textarea placeholder="Rédigez votre article ici …" class="contenuArticle"></textarea>
+                <textarea placeholder="Rédigez votre article ici …" class="contenuArticle" name="_________"></textarea>
             </div>
 
             <div id="divPubliez">
