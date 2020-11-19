@@ -30,23 +30,24 @@
             const url = 'http://localhost/3000/';
 
             fetch(url)
-                .then ( (data) => data.json())
-                .then ( (article) => generateHtml(article))
+                .then ((res) => res.json()
+                .then ((data) => generateHtml(data)))
 
-                const generateHtml = (data) => {
+                let generateHtml = (data) => {
                     console.log(data)
-                    const html = `
-                        <div class="article">
-                        <h2> ${data.title} </h2>
-                        <p> Thème <span id="nom_theme"> ${data.topic} </span></p>
-                        <img class="img_article" src="${data.imageUrl}"/>
-                        </div>
-                    `
+                    for(let i= 0; i < data.length; i++ ){
+                        let html += `
+                            <div class="article">
+                            <h2> ${data[i].title} </h2>
+                            <p> Thème <span id="nom_theme"> ${data[i].topic} </span></p>
+                            <img class="img_article" src="${data[i].imageUrl}"/>
+                            </div>
+                        `
+                    }
                 }
         
         </script>
-
-        
+       
     </div>
 
     <footer>
