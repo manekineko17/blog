@@ -24,39 +24,32 @@
     </header>
 
     <div id="container">
-        <form method="post" action="http://localhost:3000/article" id="formulaire">
-        <!--enctype="multipart/form-data" permet d'avoir une partie des données pour le corps du formulaire et une autre pour le fichier téléchargé-->
+
+        <form id="formulaire" method="POST" action="______________">
             <h2>Créez votre article</h2>
 
             <div id="divTitre">
-                <label class="titreArticle" for="titreArticle">Titre de l'article : </label>
-                <input type="text" placeholder="Titre de votre article" class="titreArticle" required>
+                <label class="titreArticle" for="titreArticle">Titre de l'article</label>
+                <input type="text" placeholder="Titre de votre article" class="titreArticle" name="________">
             </div>
 
-            <div id="divThemeEtImage">
-                <div id="divThemeArticle">
-                    <label class="themeArticle" for="themeArticle">Thème</label>
-                    <select class="themeArticle" id="menuDeroulant" required>
-                        <option value="HTML">HTML</option>
-                        <option value="CSS">CSS</option>
-                        <option value="Front JS">Front JS</option>
-                        <option value="Back JS">Back JS</option>
-                    </select>
-                </div>
-                <div id="divImageArticle">
-                    <label id="imageArticle" for="imageArticle">Image</label>
-                    <input type="url" placeholder="Votre url"/> <!--id="inputImage"-->
-                </div>
+            <div id="divThemeArticle">
+                    <label class="themeArticle" for="themeArticle" name ="____________">Thème</label>
+                    <input type="text" placeholder="Titre du thème de l'article" class="titreArticle" name="________">
             </div>
                
             <div id="divAuteur">
                 <label class="nomAuteur" for="nomAuteur">Nom de l'auteur</label>
-                <input type="text" placeholder="Titre de l'auteur" class="nomAuteur" required/>               
+
+                <input type="text" placeholder="Titre de l'auteur" class="nomAuteur" name="___________"/>               
+
             </div>
             
             <div id="divArticle">
                 <label class="contenuArticle" for="contenuArticle">Contenu de l'article</label>
-                <textarea placeholder="Rédigez votre article ici …" class="contenuArticle" required></textarea>
+
+                <textarea placeholder="Rédigez votre article ici …" class="contenuArticle" name="_________"></textarea>
+
             </div>
 
             <div id="divPubliez">

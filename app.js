@@ -29,6 +29,8 @@ app.use(bodyParser.json());
 // je créé mon modèle d'articles 
 const router = express.Router();
 
+
+// VOIR SI TOUTES CES DONNÉES SONT UTILES 
 const articleSchema = mongoose.Schema({
   title: { type: String, required: true },
   topic: {type: String, required: true},     /* faire recherche pour modifier le type */
@@ -52,11 +54,18 @@ router.route('/')
 
 router.post('/articles', (req, res) => { //pour poster un article
   const article = new Article({
+    // AU LIEU DE CE RACCOURCI METTRE TOUT EN ENTIER 
   ...req.body
   });
-  article.save()
+  article.save() // ON SAUVEGARDE DANS LA BASE DE DONNEES 
   .then(() => res.status(201).json({ message: 'Article enregistré!'}))
+  /* OU faire un try {
+    await art.save();
+    res.redirect("fichier.html"); 
+    
+    REGARDER LA DIFFÉRENCE ENTRE TRY ET THEN*/
   .catch(error => res.status(400).json({ error }));
+
 });
 
 router.get('/articles/:article_id', (req, res) => {   // ":" correspond à une url dynamique
