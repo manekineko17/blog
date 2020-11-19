@@ -9,6 +9,7 @@
 </head>
 <body>
     <header>
+
         <nav class="menu">
             <ul>
                 <li class="menu"><a href="index.html">Accueil</a></li>
@@ -17,14 +18,17 @@
                 <!-- ATTENTION cette page ne peut pas fonctionner car c'est déjà l'accueil !  -->
             </ul>
         </nav>
+
         <div id="part2_header">
             <div id = "cadre_titre">
                 <h1> octopus blog </h1>
             </div>
         </div>
+
     </header>
 
-    <div id="container">
+
+    <div id="container"></div>
             
         <script>
             const url = 'http://localhost/3000/';
@@ -34,16 +38,28 @@
                 .then ((data) => generateHtml(data)))
 
                 let generateHtml = (data) => {
-                    console.log(data)
+                    // Je définis mon HTML comme étant vide à l'origine
+                    let html =""
+
+// Je créé une boucle qui va incrémenter ma data (donc mon numéro de données) de 1 à chaque tour
                     for(let i= 0; i < data.length; i++ ){
-                        let html += `
+  // Pour éviter que mon HTML se recharge à chaque passe de boucle pour n'afficher que les datas numéro i alors 
+  // j'additionne mon html existant au nouveau html que je passe dans la boucle          
+  // ici je réappelle ma variable html mais sans mettre le let devant car je ne la définis pas,
+  // je lui ajoute seulement une autre valeur !          
+                         html += `
                             <div class="article">
                             <h2> ${data[i].title} </h2>
                             <p> Thème <span id="nom_theme"> ${data[i].topic} </span></p>
                             <img class="img_article" src="${data[i].imageUrl}"/>
                             </div>
                         `
-                    }
+                    };
+// on va créer une variable qui va aller récupérer notre classe container 
+            let articlesDiv = document.querySelector('.container')
+// Cette variable est donc stocké et prend en valeur la div container
+// on va donc pouvoir retourner cet élement dans la variable html 
+            articlesDiv.innerHTML = html
                 }
         
         </script>
