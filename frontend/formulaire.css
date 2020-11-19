@@ -29,7 +29,7 @@ h2{
 }
 
 /*********************CHAMPS DE SAISIE***************/
-.titreArticle, .nomAuteur, .contenuArticle {
+.titreArticle, .nomAuteur, .contenuArticle, .themeArticle {
     display: flex;
     flex-direction: column;
     width:100%;
@@ -49,49 +49,19 @@ input[placeholder] {
 }
 
 /*************************DIV THEME ET IMAGE************************/
-#divThemeEtImage{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    padding-bottom: 1em;
-}
-
 .themeArticle{
     padding-bottom: 0.5em;
-}
-#imageArticle{
-    padding-bottom: 0.5em;
-}
-.divThemeArticle{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-}
-
-.divImageArticle{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-}
-/******************MENU DEROULANT THEME****************/
-.themeArticle{
     display: flex;
     flex-direction: column;
     font-family: 'Source Code Pro', monospace;
     font-size: 1em;
     padding-right: 0.5em;
 }
-
-#menuDeroulant{
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
+.divThemeArticle{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
-option[value] {
-    font-family: 'Source Code Pro', monospace;
-    font-size: 1em;
-}
-
 
 /************DIV NOM DE L'AUTEUR*************/
 #divAuteur{
@@ -100,8 +70,6 @@ option[value] {
 .nomAuteur{
     padding-bottom: 0.5em;
 }
-
-
 
 /*****************DIV CONTENU DE L'ARTICLE**************/
 .contenuArticle{
