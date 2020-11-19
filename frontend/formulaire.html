@@ -25,31 +25,27 @@
 
     <div id="container">
 
-        <form id="formulaire" method="POST" action="______________">
+        <form id="formulaire" method="POST" action="http://localhost:3000/articles">
             <h2>Créez votre article</h2>
 
             <div id="divTitre">
                 <label class="titreArticle" for="titreArticle">Titre de l'article</label>
-                <input type="text" placeholder="Titre de votre article" class="titreArticle" name="________">
+                <input type="text" placeholder="Titre de votre article" class="titreArticle" name="title">
             </div>
 
             <div id="divThemeArticle">
-                    <label class="themeArticle" for="themeArticle" name ="____________">Thème</label>
-                    <input type="text" placeholder="Titre du thème de l'article" class="titreArticle" name="________">
+                <label class="themeArticle" for="themeArticle">Thème</label>
+                <input type="text" placeholder="Titre du thème de l'article" class="titreArticle" name="topic">
             </div>
                
             <div id="divAuteur">
                 <label class="nomAuteur" for="nomAuteur">Nom de l'auteur</label>
-
-                <input type="text" placeholder="Titre de l'auteur" class="nomAuteur" name="___________"/>               
-
+                <input type="text" placeholder="Titre de l'auteur" class="nomAuteur" name="author"/>               
             </div>
             
             <div id="divArticle">
                 <label class="contenuArticle" for="contenuArticle">Contenu de l'article</label>
-
-                <textarea placeholder="Rédigez votre article ici …" class="contenuArticle" name="_________"></textarea>
-
+                <textarea placeholder="Rédigez votre article ici …" class="contenuArticle" name="content"></textarea>
             </div>
 
             <div id="divPubliez">

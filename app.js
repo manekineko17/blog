@@ -23,49 +23,47 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(bodyParser.urlencoded({ extended: false }))
+
 // je crée des  middlewares qui vont faire en sorte qu'à chaque fois que j'attend un chemin, j'ai ma fonction qui s'execute (ne pas oublier body parser)
+//bodyParser librairie qui met les données du formulaire dans le body
 app.use(bodyParser.json());
 
 // je créé mon modèle d'articles 
 const router = express.Router();
 
-
 // VOIR SI TOUTES CES DONNÉES SONT UTILES 
 const articleSchema = mongoose.Schema({
   title: { type: String, required: true },
-  topic: {type: String, required: true},     /* faire recherche pour modifier le type */
-  // imageUrl: { type: String, required: true },
-  author: { type: String, required: true },
+  topic: {type: String, required: true},   
   date: { type: Date, default : Date.now},
   content: {type: String, required: true},
 });
 
-module.exports = mongoose.model('Article', articleSchema);
+var Article = mongoose.model('Article', articleSchema); // à la place de module.exports
 
 /* je créé mes routes en fonction de trois chemins différents : 
 - un chemin pour accueil 
 - un chemin pour le formulaire
 - un chemin pour le détail en fonction de l'article demandé */ 
 
-router.route('/')
+router.route('/welcome')
     .all(function(req,res){
         res.json({message : "Bienvenue sur notre API d'articles", methode : req.method});
     });
 
-router.post('/articles', (req, res) => { //pour poster un article
-  const article = new Article({
-    // AU LIEU DE CE RACCOURCI METTRE TOUT EN ENTIER 
-  ...req.body
-  });
-  article.save() // ON SAUVEGARDE DANS LA BASE DE DONNEES 
-  .then(() => res.status(201).json({ message: 'Article enregistré!'}))
-  /* OU faire un try {
-    await art.save();
-    res.redirect("fichier.html"); 
-    
-    REGARDER LA DIFFÉRENCE ENTRE TRY ET THEN*/
-  .catch(error => res.status(400).json({ error }));
-
+router.post('/articles', (req, res) => { 
+  const article = new Article();   // utiliser le raccourci { ...req.body} ou mettre le détails comme après
+  article.title = req.body.title;  //body : données du formulaire arrivées sur ma fonction
+  article.topic = req.body.topic;
+  article.author = req.body.author;
+  article.content = req.body.content;
+  try{
+    article.save(); // ON SAUVEGARDE DANS LA BASE DE DONNEES 
+    res.redirect(201, "http://localhost:3000/" ) //après la publication de l'article, mis à jour de la bdd et renvoi ver l'url accueil
+  }catch(err){
+    res.status(201).json({ message: 'Article enregistré!'})
+  }
 });
 
 router.get('/articles/:article_id', (req, res) => {   // ":" correspond à une url dynamique
@@ -79,6 +77,18 @@ router.get('/', (req, res) => {
   .then(articles => res.status(200).json(articles))
   .catch(error => res.status(400).json({ error }));
 });
+
+// je fais en sorte que mes données soit exportées sur mongoose 
+module.exports = app;
+
+app.use(router);
+
+// Je fais en sorte que mon serveur "écoute sur le port de mon choix" et je le console.log pour savoir quand ma connexion est faite
+app.listen(3000, function(){
+  console.log('Connexion au serveur réussie'); 
+  });
+
+
 
 // router.put('/:id', (req, res, next) => {
 //     Article.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
@@ -96,20 +106,6 @@ router.get('/', (req, res) => {
 
 //si on met app.use('/api/post', postRoutes); localhost:3000/api/post
 
-// je fais en sorte que mes données soit exportées sur mongoose 
-module.exports = app;
-
-// Je permet à mon application d'aller chercher des pages statiques dans mon dossier front end
-app.use(express.static('../frontend'));
-
-app.use(router);
-
-// Je fais en sorte que mon serveur "écoute sur le port de mon choix" et je le console.log pour savoir quand ma connexion est faite
-app.listen(3000, function(){
-  console.log('Connexion au serveur réussie'); 
-  });
-
-
-/*Une application Express est une série de fonctions appelées middleware. Chaque élément de middleware
-*reçoit les objets request et response, peut les lire, les analyser et les manipuler. Le middleware Express
-*reçoit ausssi la méthode next qui permet à chaque middleware de passer l'exécution au middleware suivant.*/ 
+// Une application Express est une série de fonctions appelées middleware. Chaque élément de middleware
+// reçoit les objets request et response, peut les lire, les analyser et les manipuler. Le middleware Express
+// reçoit ausssi la méthode next qui permet à chaque middleware de passer l'exécution au middleware suivant. 
