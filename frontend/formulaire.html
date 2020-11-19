@@ -24,12 +24,12 @@
     </header>
 
     <div id="container">
-        <form method="post" action="mongodb+srv://adelevrc:OrBOQavXpEwtl2c5@cluster0.fz1lu.mongodb.net/articlesdb?retryWrites=true&w=majority"
-        enctype="multipart/form-data" id="formulaire">  <!--enctype permet d'avoir une partie des données pour le corps du formulaire et une autre pour le fichier téléchargé-->
+        <form method="post" action="http://localhost:3000/article" id="formulaire">
+        <!--enctype="multipart/form-data" permet d'avoir une partie des données pour le corps du formulaire et une autre pour le fichier téléchargé-->
             <h2>Créez votre article</h2>
 
             <div id="divTitre">
-                <label class="titreArticle" for="titreArticle">Titre de l'article</label>
+                <label class="titreArticle" for="titreArticle">Titre de l'article : </label>
                 <input type="text" placeholder="Titre de votre article" class="titreArticle" required>
             </div>
 

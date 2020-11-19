@@ -1,14 +1,14 @@
 // j'appelle express et mongoose et body parser ! 
-const bodyParser = require('body-parser'); //import de body parser
-const mongoose = require('mongoose'); //import de mongoose
+const bodyParser = require('body-parser'); //body parser pour mettre les données dans le bon format pour la bdd
+const mongoose = require('mongoose'); //mongoose pour communiquer avec la bdd
 
-// je fais en sorte qu'express utilise sa méthode de router et je vais en sorte que app l'utilise !
-const express = require('express'); //import d'express + commande require
+// je fais en sorte qu'express utilise sa méthode de router et je fais en sorte que app l'utilise !
+const express = require('express');
 
-// Je créé une variable qui va permettre d'executer express
-const app = express(); //appel de la méthode express pour créer une appli express
+// Je créé une variable qui va permettre d'executer express (créer une appli express)
+const app = express();
 
-// je connecte ma database
+// je connecte ma database. Action qui prend un peu de temps donc c'est bien de le mettre au début du code
 mongoose.connect("mongodb+srv://adelevrc:OrBOQavXpEwtl2c5@cluster0.fz1lu.mongodb.net/piscinedb?retryWrites=true&w=majority", /*modifier le lien*/
   { useNewUrlParser: true,
     useUnifiedTopology: true })
@@ -16,7 +16,6 @@ mongoose.connect("mongodb+srv://adelevrc:OrBOQavXpEwtl2c5@cluster0.fz1lu.mongodb
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 // j'évite les problèmes de CORS 
-
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
@@ -25,14 +24,14 @@ app.use((req, res, next) => {
 });
 
 // je crée des  middlewares qui vont faire en sorte qu'à chaque fois que j'attend un chemin, j'ai ma fonction qui s'execute (ne pas oublier body parser)
-app.use(bodyParser.json()); //middleware global. à partir de ce middleware, on a accès au corps de la req 
+app.use(bodyParser.json());
 
 // je créé mon modèle d'articles 
 const router = express.Router();
 
 const articleSchema = mongoose.Schema({
   title: { type: String, required: true },
-  topic: {type: String, required: true}, /* faire recherche pour modifier le type */
+  topic: {type: String, required: true},     /* faire recherche pour modifier le type */
   // imageUrl: { type: String, required: true },
   author: { type: String, required: true },
   date: { type: Date, default : Date.now},
@@ -91,8 +90,12 @@ router.get('/', (req, res) => {
 // je fais en sorte que mes données soit exportées sur mongoose 
 module.exports = app;
 
+// Je permet à mon application d'aller chercher des pages statiques dans mon dossier front end
+app.use(express.static('../frontend'));
+
 app.use(router);
 
+// Je fais en sorte que mon serveur "écoute sur le port de mon choix" et je le console.log pour savoir quand ma connexion est faite
 app.listen(3000, function(){
   console.log('Connexion au serveur réussie'); 
   });
