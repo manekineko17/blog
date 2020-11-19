@@ -10,7 +10,7 @@
 
 #container2 > h2 {color: #25283D;font-size: 1.5em;}
 
-#info_articles {display: flex;flex-direction: column;justify-content: center;width: 90%;height: 30%;}
+#info_articles {display: flex;flex-direction: column;justify-content: center;width: 90%;height: 30%; margin-top: 1em;}
 
 #theme, #author, #date {width: 100%;margin: 1em 0 0 0;}
 
@@ -26,7 +26,8 @@ margin: 1em 0 1em 0;}
 #container2 > #texte_area{
     background-color: rgba(255,255,255,0.5);
     width: 90%;
-    margin: 0 0 1em 0;}
+    margin: 0 0 1em 0;
+    margin-top: 5em;}  
 
 #texte_area > .res_contenu {font-size: 1em;}
 /*Version Desktop*/
