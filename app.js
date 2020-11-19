@@ -9,7 +9,7 @@ const express = require('express');
 const app = express();
 
 // je connecte ma database. Action qui prend un peu de temps donc c'est bien de le mettre au début du code
-mongoose.connect("mongodb+srv://adelevrc:OrBOQavXpEwtl2c5@cluster0.fz1lu.mongodb.net/piscinedb?retryWrites=true&w=majority", /*modifier le lien*/
+mongoose.connect("mongodb+srv://adelevrc:OrBOQavXpEwtl2c5@cluster0.fz1lu.mongodb.net/articlesdb?retryWrites=true&w=majority", /*modifier le lien*/
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
