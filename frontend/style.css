@@ -85,6 +85,7 @@ header > #part2_header{
 
 #container {
     flex-grow: 1;
+    background-color: rgb(20, 24, 59);
 }
 /* ///////////////////////// FOOTER  /////////////////////////  */
 
