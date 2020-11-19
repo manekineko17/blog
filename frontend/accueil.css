@@ -16,16 +16,11 @@
     margin-top: 2em;
 }
 
-#nom_theme {
+.background_data {
     font-family: 'Roboto';
     background-color: rgb(255, 255, 255, 50%);
     padding: 5px;
     font-size: 80%;
-}
-
-.img_article {
-    margin-top: 0.5em;
-    width: 50%;
 }
 
 
