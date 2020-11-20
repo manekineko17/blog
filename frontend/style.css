@@ -83,10 +83,43 @@ header > #part2_header{
 
 /* ///////////////////////// CORPS ///////////////////////// */
 
-#container {
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
     flex-grow: 1;
     background-color: rgb(20, 24, 59);
+    align-items: center;
+    font-family: 'Source Code Pro', monospace;
+    color: #25283D;
 }
+
+.article {
+    display: flex;
+    flex-direction: column;
+    background-color: #EB8258;
+    padding-left: 1em;
+
+}
+
+.subject_article{
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+.background_data {
+    font-family: 'Roboto';
+    background-color: rgb(255, 255, 255, 50%);
+    line-height: 2em;
+    width: 80%;
+}
+
+
 /* ///////////////////////// FOOTER  /////////////////////////  */
 
 footer {
@@ -118,13 +151,25 @@ display: none;
 /* ///////////////////////// RESPONSIVE  /////////////////////////  */
 
 /*tablet :on screens that are min 376px, set the followings*/
-@media screen and (max-width: 1094px) and (min-width: 834px) {
-
+@media screen and (min-width: 834px) {
+  .container {
+        flex-direction: row;
+        justify-content: space-around;
+        /* margin: 0em 4em 4em; */
+    }
 }
     
 /*desktop: on screens that are 1094px or more, set the followings */
 @media screen and (min-width: 1094px) {
 
+
+    .container {
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 0em 4em 4em;
+    }
+
+    
     h1 {
         font-size: 3em;
     }
@@ -155,4 +200,13 @@ display: none;
         #aurelie {color: #EB8258;}
         #marine {color: #4FB0C6;}
         #adele{color: #F6F740;}
+}
+
+.article{
+    margin: 2em 0 2em 0;
+    width: 22em;
+ }
+
+.img_article {
+    width: 60%;
 }

@@ -1,27 +1,4 @@
-#container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    font-family: 'Source Code Pro', monospace;
-    color: #25283D;
-}
 
-.article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1em;
-    width: 18em;
-    margin-top: 2em;
-}
-
-.background_data {
-    font-family: 'Roboto';
-    background-color: rgb(255, 255, 255, 50%);
-    padding: 5px;
-    font-size: 80%;
-}
 
 
 /*tablet :on screens that are min 376px, set the followings*/

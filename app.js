@@ -35,6 +35,7 @@ const router = express.Router();
 // VOIR SI TOUTES CES DONNÉES SONT UTILES 
 const articleSchema = mongoose.Schema({
   title: { type: String, required: true },
+  author: { type: String, required: true },
   topic: {type: String, required: true},   
   date: { type: Date, default : Date.now},
   content: {type: String, required: true},
