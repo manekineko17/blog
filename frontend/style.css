@@ -16,6 +16,7 @@ html, body {
     width: 100%;
 }
 
+
 /* ///////////////////////// HEADER /////////////////////////   */
 
 header{
@@ -49,11 +50,11 @@ header > nav > ul{
             text-decoration: none;
         }
 
-#cadre_titre {
+/* #cadre_titre {
     background-color: rgba(20, 24, 59, 0.4);
     padding: 0 2em 0 2em;
     margin: 1em 0;
-}
+} */
 
 h1, h2 {
 
@@ -89,7 +90,7 @@ header > #part2_header{
     justify-content: space-around;
     flex-wrap: wrap;
     flex-grow: 1;
-    background-color: rgb(20, 24, 59);
+    background-color:rgba(37, 40, 61, 1);
     align-items: center;
     font-family: 'Source Code Pro', monospace;
     color: #25283D;
@@ -163,18 +164,12 @@ display: none;
 @media screen and (min-width: 1094px) {
 
 
-    .container {
-        flex-direction: row;
-        justify-content: space-around;
-        margin: 0em 4em 4em;
-    }
-
     
     h1 {
         font-size: 3em;
     }
     header > nav{
-        height: 20%;
+        height: 30%;
     }
         nav > ul > li{
             font-size: 1em;

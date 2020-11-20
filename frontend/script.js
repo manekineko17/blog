@@ -16,12 +16,13 @@ for (let i=0; i<elements.length; i++){
 }
 
 ////////////////////////////  POUR FAIRE AFFICHER TOUS LES ARTICLES SUR LA PAGE ////////////////////////////
+const getAllArticles = async () => {
+    const response = await fetch('http://localhost:3000/');
+    const data = await response.json();
+    generateHtml(data);
+};
 
-const url = 'http://localhost:3000/';
-
-fetch(url)
-    .then ((res) => res.json()
-    .then ((data) => generateHtml(data)))
+getAllArticles(); 
 
 let generateHtml = (data) => {
     // Je définis mon HTML comme étant vide à l'origine
@@ -52,4 +53,55 @@ let generateHtml = (data) => {
 // Cette variable est donc stocké et prend en valeur la div container
 // on va donc pouvoir retourner cet élement dans la variable html 
     articlesDiv.innerHTML = html
-}
+};
+
+
+
+////////////////////////////  POUR AFFICHER UN ARTICLE CHOISI ////////////////////////////
+
+
+const getArticle = async (id) => {
+    const response = await fetch(`http://localhost:3000/articles/${id}`);
+    const article = await response.json()
+    generateHtmlArticle(article)
+};
+
+    let generateHtmlArticle = (article) => {
+        resetPage() //supprimer la page avant de générer une autre page
+        let html =`
+        <div id="container2">
+            <h2>${article.title}</h2>
+
+            <div id="info_articles">
+                <div id="theme">
+                    <span class="article_field">Thème:</span>
+                    <p class="res">${article.topic}</p>
+                </div>
+                <div id="author">
+                    <span class="article_field">Nom de l'auteur:</span>
+                    <p class="res">${article.author}</p>
+                </div>
+                <div id="date">
+                    <span class="article-field"> Date de publication:</span>
+                    <p class="res">${article.date}</p>
+                </div>
+            </div>
+            <div id="texte_area">
+                <p class="res_contenu">${article.content}</p>
+            </div>
+            <div class ="return">
+            <button class="back" onclick="getAllArticles(),resetPage()">Back</button></div></div>
+        </div>
+      `
+    let articlesDiv = document.querySelector('.container1')
+    articlesDiv.innerHTML = html
+     };
+
+        document.querySelectorAll('.voir').forEach((item) => {
+        item.addEventListener('click', getArticle);
+});
+
+        const resetPage = () => {
+    document.querySelector('.container').innerHTML = '';
+    document.querySelector('.container1').innerHTML = '';
+};

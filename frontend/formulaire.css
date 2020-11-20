@@ -3,8 +3,10 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    flex-grow: 1;
     justify-content: space-around;
-    align-content: center;}
+    align-content: center;
+    background-color:#25283D}
 
 h2{
     text-align: center;
@@ -18,9 +20,7 @@ h2{
     height: 90%;
     flex-direction: column;
     flex-wrap: nowrap;
-    /* justify-content: space-around; */
     align-content: center;
-    /* align-items: center; */
     background-color: #EB8258;
     color: #25283d;
     font-size: 0.8em;
