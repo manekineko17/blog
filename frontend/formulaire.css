@@ -95,11 +95,8 @@ textarea[placeholder] {
     display: flex;
     justify-content: flex-end;
 }
-#boutonPubliez{
-    width: min-content;
-    background-color: rgb(255, 255, 255);
-    border: none;
-}
+
+
 input[value],[type] {
     font-family: 'Source Code Pro', monospace;
     font-size: 1em;
