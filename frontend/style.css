@@ -99,7 +99,7 @@ header > #part2_header{
     display: flex;
     flex-direction: column;
     background-color: #EB8258;
-    padding-left: 1em;
+    padding: 1em;
 
 }
 

@@ -1,28 +1,15 @@
 
-//////////////////////////// COULEUR DES BLOCS CHOISIE ALEATOIREMENT ENTRE 4 COULEURS DIFFERENTES ////////////////////////////
-
-let colors = ['#EB8258', '#4FB0C6', '#F6F740', '#A100F2'];
-const elements = document.querySelectorAll('.article');
-
-function changeBackground(element){
-    let random_num = Math.round(Math.random() * (colors.length-1));
-    let random_color = colors[random_num];
-    element.style.backgroundColor = random_color;
-}
-
-for (let i=0; i<elements.length; i++){
-    console.log(i);
-    changeBackground(elements[i]);
-}
-
 ////////////////////////////  POUR FAIRE AFFICHER TOUS LES ARTICLES SUR LA PAGE ////////////////////////////
 
 const url = 'http://localhost:3000/';
 
 fetch(url)
-    .then ((res) => res.json()
-    .then ((data) => generateHtml(data)))
+    .then (
+        (res) => res.json()
+        .then ((data) => generateHtml(data))
+    )
 
+ 
 let generateHtml = (data) => {
     // Je définis mon HTML comme étant vide à l'origine
     let html =""
@@ -52,4 +39,27 @@ let generateHtml = (data) => {
 // Cette variable est donc stocké et prend en valeur la div container
 // on va donc pouvoir retourner cet élement dans la variable html 
     articlesDiv.innerHTML = html
+
+    randomBackground()
+}
+
+
+
+//////////////////////////// COULEUR DES BLOCS CHOISIE ALEATOIREMENT ENTRE 4 COULEURS DIFFERENTES ////////////////////////////
+
+let colors = ['#EB8258', '#4FB0C6', '#F6F740', '#A100F2'];
+
+let randomBackground = () => {
+    const elements = document.querySelectorAll('.article');
+
+    for (let i=0; i<elements.length; i++){
+        changeBackground(elements[i]);
+    }
+}
+
+
+let changeBackground = (element) => {
+    let random_num = Math.round(Math.random() * (colors.length-1));
+    let random_color = colors[random_num];
+    element.style.backgroundColor = random_color;
 }
