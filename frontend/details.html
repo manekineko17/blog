@@ -21,47 +21,53 @@
         </div>
     </header>
 
-    <div id="container1">
+    <div class="container1">
         <div id="container2">
 
             <script>
 
                 const getArticle = async (id) => {
                 const response = await fetch(`http://localhost:3000/articles/${id}`);
-                const article = await response.json();
+                const article = await response.json()
+                generateHtmlArticle(data)
+            };
 
-                fetch(`http://localhost:3000/articles/${id}`)
-                    .then ((res) => res.json()
-                    .then ((data) => generateHtml(data)))
-
-                let generateHtml = (data) => {
-
+                let generateHtmlArticle = (data) => {
+                    resetPage() //supprimer la page avant de générer une autre page
                     let html =`
 
-                    <h2>${data[i].title}</h2>
+                    <h2>${data.title}</h2>
 
                     <div id="info_articles">
                         <div id="theme">
                             <span class="article_field">Thème:</span>
-                            <p class="res">${data[i].topic}</p>
+                            <p class="res">${data.topic}</p>
                         </div>
                         <div id="author">
                         <span class="article_field">Nom de l'auteur:</span>
-                        <p class="res">${data[i].author}</p>
+                        <p class="res">${data.author}</p>
                         </div>
                         <div id="date">
                         <span class="article-field"> Date de publication:</span>
-                        <p class="res">${data[i].date}</p>
+                        <p class="res">${data.date}</p>
                         </div>
                     </div>
                     <div id="texte_area">
-                <p class="res_contenu">${data[i].content}</p>
+                <p class="res_contenu">${data.content}</p>
                 </div>
                   `
-                };
-                let articlesDiv = document.querySelector('#container1')
+                let articlesDiv = document.querySelector('.container1')
                 articlesDiv.innerHTML = html
-                
+                 };
+
+                    document.querySelectorAll('.voir').forEach((item) => {
+                    item.addEventListener('click', getArticle);
+        });
+        
+                    const resetPage = () => {
+                document.querySelector('.container').innerHTML = '';
+                document.querySelector('.container1').innerHTML = '';
+            };
             </script>
 
         </div>
