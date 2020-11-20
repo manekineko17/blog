@@ -63,7 +63,7 @@ router.post('/articles', (req, res) => {
     article.save(); // ON SAUVEGARDE DANS LA BASE DE DONNEES 
     res.redirect("http://localhost:3000/welcome" ) //après la publication de l'article, mis à jour de la bdd et renvoi ver l'url accueil
   }catch(err){
-    res.status(201).json({ message: 'Article enregistré!'})
+    res.status(400).json({ message: 'Erreur d\'enregistrement'})
   }
 });
 
