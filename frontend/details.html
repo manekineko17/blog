@@ -24,30 +24,46 @@
     <div id="container1">
         <div id="container2">
 
-                <h2>Titre de l'article</h2>
+            <script>
 
-                <div id="info_articles">
-                    <div id="theme">
-                    <span class="article_field">Thème:</span>
-                    <p class="res">thème de la publication</p>
-                    </div>
-                    <div id="author">
-                    <span class="article_field">Nom de l'auteur:</span>
-                    <p class="res">Nom d'auteur</p>
-                    </div>
-                    <div id="date">
-                    <span class="article-field"> Date de publication:</span>
-                    <p class="res"> Date de la publication </p>
-                    </div>
-                </div>
+                const getArticle = async (id) => {
+                const response = await fetch(`http://localhost:3000/articles/${id}`);
+                const article = await response.json();
 
-                <div id="texte_area">
-                <p class="res_contenu">Lorem ipsum dolor sit amet. 
-                    Eos repudiandae nulla ut sunt atque sed neque fugit cum delectus quod nam deleniti harum aut excepturi incidunt et praesentium perferendis. 
-                    Rem laborum molestiae ut minus fugiat qui quibusdam asperiores cum repellendus galisum eos numquam commodi cum alias optio. 
-                    Ut excepturi voluptas ut officia ipsam eum porro dicta.
-                </p>
+                fetch(`http://localhost:3000/articles/${id}`)
+                    .then ((res) => res.json()
+                    .then ((data) => generateHtml(data)))
+
+                let generateHtml = (data) => {
+
+                    let html =`
+
+                    <h2>${data[i].title}</h2>
+
+                    <div id="info_articles">
+                        <div id="theme">
+                            <span class="article_field">Thème:</span>
+                            <p class="res">${data[i].topic}</p>
+                        </div>
+                        <div id="author">
+                        <span class="article_field">Nom de l'auteur:</span>
+                        <p class="res">${data[i].author}</p>
+                        </div>
+                        <div id="date">
+                        <span class="article-field"> Date de publication:</span>
+                        <p class="res">${data[i].date}</p>
+                        </div>
+                    </div>
+                    <div id="texte_area">
+                <p class="res_contenu">${data[i].content}</p>
                 </div>
+                  `
+                };
+                let articlesDiv = document.querySelector('#container1')
+                articlesDiv.innerHTML = html
+                
+            </script>
+
         </div>
     </div>
 
