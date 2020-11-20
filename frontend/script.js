@@ -62,7 +62,7 @@ let changeBackground = (element) => {
     let random_color = colors[random_num];
     element.style.backgroundColor = random_color;
 }
-};
+;
 
 
 
