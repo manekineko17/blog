@@ -45,10 +45,10 @@ header > nav > ul{
         list-style-type: none;
     }
 
-        li > a:link, a:visited{
-            color: #ffffff;
-            text-decoration: none;
-        }
+a:link, a:visited{
+    color: #ffffff;
+    text-decoration: none;
+}
 
 /* #cadre_titre {
     background-color: rgba(20, 24, 59, 0.4);
@@ -202,12 +202,21 @@ display: none;
     }
 
 /* On veut que les noms apparraissent sur la version Desktop  */
+#bloc_logo{
+    width: 100%;
+}
+
+.collab {
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+}
     .name {
         display: flex;
         flex-direction: row;
         font-family: 'Source Code Pro', monospace;
-        letter-spacing: 0.3em;
-        margin-right: 1em;
+        /* letter-spacing: 0.3em; */
+        /* margin-right: 1em; */
         }
         #mereani {color: #A100F2;}
         #aurelie {color: #EB8258;}
