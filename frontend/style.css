@@ -72,9 +72,7 @@ h1{
 /* rajout d'une deuxième div qui va faire que le header est séparé en deux et modif de la taille de la div grâce à flex-grow*/ 
 
 header > #part2_header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: flex;flex-direction: column;justify-content: center;
     align-content: center;
     align-items: center;
     width: 100%;
@@ -104,14 +102,9 @@ header > #part2_header{
 
 }
 
-.subject_article{
-    display: flex;
-    flex-direction: column;
-}
+.subject_article{display: flex; flex-direction: column;}
 
-h3 {
-    font-size: 1em;
-}
+h3 {font-size: 1em;}
 
 .background_data {
     font-family: 'Roboto';
@@ -181,8 +174,6 @@ display: none;
 /*desktop: on screens that are 1094px or more, set the followings */
 @media screen and (min-width: 1094px) {
 
-
-    
     h1 {
         font-size: 3em;
     }
@@ -193,6 +184,7 @@ display: none;
             font-size: 1em;
             margin : 0.5em 0em 0 0.5em;
         }
+
     #part2_header{
         padding: 2em 0;
     }
@@ -203,12 +195,13 @@ display: none;
 
 /* On veut que les noms apparraissent sur la version Desktop  */
 #bloc_logo{
-    width: 100%;
+    width: 80%;
 }
 
 .collab {
     display: flex;
     flex-direction: row;
+    align-items: center;
     width: 25%;
 }
     .name {
@@ -216,7 +209,7 @@ display: none;
         flex-direction: row;
         font-family: 'Source Code Pro', monospace;
         /* letter-spacing: 0.3em; */
-        /* margin-right: 1em; */
+        margin-left: 1em;
         }
         #mereani {color: #A100F2;}
         #aurelie {color: #EB8258;}
