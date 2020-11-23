@@ -1,112 +1,36 @@
 
-#container{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    justify-content: space-around;
-    align-content: center;
-    background-color:#25283D}
+#container{display: flex;flex-direction: column;flex-wrap: wrap;flex-grow: 1;justify-content: space-around;align-content: center;background-color:#25283D}
 
-h2{
-    text-align: center;
-    padding-bottom: 1em;
-}
+h2{text-align: center;padding-bottom: 1em;}
 
 /**************CADRE ORANGE FORMULAIRE*************/
-#formulaire{
-    display: flex;
-    width: 90%;
-    height: 90%;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: center;
-    background-color: #EB8258;
-    color: #25283d;
-    font-size: 0.8em;
-    font-family: 'Source Code Pro', monospace;
-    padding: 2em;
-}
+#formulaire{display: flex;flex-direction: column;flex-wrap: nowrap;align-content: center;width: 90%;height: 90%;background-color: #EB8258;color: #25283d;font-size: 0.8em;font-family: 'Source Code Pro', monospace;padding: 2em;}
 
 /*********************CHAMPS DE SAISIE***************/
-.titreArticle, .nomAuteur, .contenuArticle, .themeArticle {
-    display: flex;
-    flex-direction: column;
-    width:100%;
-}
+.titreArticle, .nomAuteur, .contenuArticle, .themeArticle {display: flex;flex-direction: column;width:100%;}
 
 /***************************DIV TITRE DE L'ARTICLE***************/
-#divTitre{
-    padding-bottom: 1em;
-}
-input[placeholder] {
-    font-family: 'Source Code Pro', monospace;
-    font-style: italic;
-    font-size: 0.8em;
-}
-.titreArticle{
-    padding-bottom: 0.5em;
-}
+#divTitre{padding-bottom: 1em;}
+
+input[placeholder] {font-family: 'Source Code Pro', monospace;font-style: italic;font-size: 0.8em;}
+
+.titreArticle{padding-bottom: 0.5em;}
 
 /*************************DIV THEME ET IMAGE************************/
-.themeArticle{
-    padding-bottom: 0.5em;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Source Code Pro', monospace;
-    font-size: 1em;
-    padding-right: 0.5em;
-}
-.divThemeArticle{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-}
+.themeArticle{padding-bottom: 0.5em;display: flex;flex-direction: column;font-family: 'Source Code Pro', monospace;font-size: 1em;padding-right: 0.5em;}
+.divThemeArticle{display: flex;flex-direction: column;flex-wrap: nowrap;}
 
 /************DIV NOM DE L'AUTEUR*************/
-#divAuteur{
-    padding-bottom: 1em;
-}
-.nomAuteur{
-    padding-bottom: 0.5em;
-}
+#divAuteur{padding-bottom: 1em;}
+.nomAuteur{padding-bottom: 0.5em;}
 
 /*****************DIV CONTENU DE L'ARTICLE**************/
-.contenuArticle{
-    min-width: 100%;
-    max-width: 100%;
-    max-height: 90%;   
-    padding-bottom: 0.5em; 
-}
-textarea[placeholder] {
-    font-family: 'Source Code Pro', monospace;
-    font-style: italic;
-    font-size: 0.8em;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-}
-#divArticle{
-    padding-bottom: 1em;
-}
+.contenuArticle{min-width: 100%;max-width: 100%;max-height: 90%;   padding-bottom: 0.5em; }
+textarea[placeholder] {font-family: 'Source Code Pro', monospace;font-style: italic;font-size: 0.8em;background-color: rgba(255, 255, 255, 0.5);border: none;}
+#divArticle{padding-bottom: 1em;}
 
 
 /*****************DIV PUBLIEZ*****************************/
-#divPubliez{
-    display: flex;
-    justify-content: flex-end;
-}
-
-
-input[value],[type] {
-    font-family: 'Source Code Pro', monospace;
-    font-size: 1em;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    padding: 0.5em;
-}
-p{
-    font-family: 'Source Code Pro', monospace;
-    font-size: 0.8em;
-    font-style: italic;
-    width: 90%;
-}
+#divPubliez{display: flex;justify-content: flex-end;}
+input[value],[type] {font-family: 'Source Code Pro', monospace;font-size: 1em;background-color: rgba(255, 255, 255, 0.5);border: none;padding: 0.5em;}
+p{font-family: 'Source Code Pro', monospace;font-size: 0.8em;font-style: italic;width: 90%;}
