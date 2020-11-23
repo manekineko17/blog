@@ -9,9 +9,9 @@ const express = require('express');
 const app = express();
 
 // je connecte ma database. Action qui prend un peu de temps donc c'est bien de le mettre au début du code
-let urlMongoDb = require('config.json')
+let urlMongoDb = require('./config.json')
 
-mongoose.connect(urlMongoDb.url, /*modifier le lien*/
+mongoose.connect(urlMongoDb.URL, 
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
@@ -63,7 +63,7 @@ router.post('/articles', (req, res) => {
   article.content = req.body.content;
   try{
     article.save(); // ON SAUVEGARDE DANS LA BASE DE DONNEES 
-    res.redirect("http://localhost:3000/welcome" ) //après la publication de l'article, mis à jour de la bdd et renvoi ver l'url accueil
+    res.redirect("redirect.html" ) //après la publication de l'article, mis à jour de la bdd et renvoi ver l'url accueil
   }catch(err){
     res.status(400).json({ message: 'Erreur d\'enregistrement'})
   }
@@ -85,6 +85,7 @@ router.get('/', (req, res) => {
 module.exports = app;
 
 app.use(router);
+app.use(express.static('./frontend')); 
 
 // Je fais en sorte que mon serveur "écoute sur le port de mon choix" et je le console.log pour savoir quand ma connexion est faite
 app.listen(3000, function(){
